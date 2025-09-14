@@ -68,11 +68,16 @@ function draw(){
   else { noStroke(); fill(255,40); rect(ix, iy, ICON_SIZE, ICON_SIZE, 6); }
 
   // ---- Text overlays ----
-  if (manager.current === SCENE.HOME) {
-    drawCTA(dw, dh);
-  } else if (manager.current === SCENE.ROOM) {
-    drawRoomHints(dw, dh);
-  }
+  // ---- Text overlays ----
+// ---- Text overlays ----
+if (manager.current === SCENE.HOME) {
+  drawCTA(dw, dh);              // title page only
+} else {
+  drawRoomHints(dw, dh);        // every other scene
+}
+
+
+  
 
   // cursor
   if (uvOn) noCursor(); else cursor(ARROW);
